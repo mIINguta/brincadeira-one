@@ -3,31 +3,16 @@ const sim = document.querySelector('.sim');
 const text = document.querySelector('.text');
 const foto = document.querySelector('.foto');
 const caseNot = document.querySelector('.case-not')
-let valor;
-let contador = 1;
+let altura=window.innerHeight-50;
+let largura=window.innerWidth-50;
+
 
 nao.addEventListener('click', function(){
-     valor = 5*contador;
-     console.log(contador);
-     console.log(valor);
-     caseNot.style = "display:block;"
-
-        if(contador >= 0 && contador < 5){   
-        nao.style = `position: relative; top:${valor*contador}px; left:${valor*contador}px;`;
-        contador++;
-    }
-
-    else if(contador >= 4 && contador < 8){
-        nao.style = `position: relative; top:${valor*contador}px; right:${valor*contador}px;`;
-        contador++;
-    }
-    else if(contador >= 7){
-        valor =5;
-        nao.style = `position: relative; bottom:${valor*contador}px;`;
-        contador = 3;
-    }
-}
-);
+    nao.style.position="absolute";
+    nao.style.top=Math.random() * altura + "px";
+    nao.style.left=Math.random() * largura + "px";
+    caseNot.style = "display:block;"
+})
   
 
 sim.addEventListener("click", function(){
